@@ -1,0 +1,321 @@
+@import url("./reset.css");
+@import url("./utility.css");
+:root {
+  /* Design color */
+  --clr-primary: #e3e6f3;
+  --clr-font-primary: #1a1a1a;
+  --clr-font-secondary: #088178;
+}
+/* ------------------------- Header Style ------------------------- */
+header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 4rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--clr-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+header .cart {
+  max-width: 30px;
+  transform: rotate(12deg);
+}
+header .close {
+  position: absolute;
+}
+
+header ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+}
+header li {
+  padding-inline: 1rem;
+}
+nav a {
+  color: var(--clr-font-primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+nav li:not(:last-of-type) a:hover::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: black;
+  width: 50%;
+  border-radius: 200px;
+}
+nav a:hover {
+  color: var(--clr-font-secondary);
+}
+
+nav a:hover ::marker {
+  width: 30px;
+}
+header .menu,
+header .cartIcon {
+  max-width: 30px;
+  display: inline-block;
+  cursor: pointer;
+  margin-inline-start: 5px;
+}
+
+header .toggle-off {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  flex-direction: column;
+  background-color: rgb(215, 212, 236);
+  font-size: clamp(1rem, 1.3vw + 0.5rem, 2rem);
+  font-weight: 600;
+  gap: 3rem;
+  padding-top: 4rem;
+  transition: all 0.3s ease;
+}
+header .toggle-on {
+  right: 0;
+}
+header .close {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  max-width: 40px;
+  cursor: pointer;
+}
+
+/* -----------------Single Product----------------- */
+
+section#sproduct {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+section#sproduct .product-gallery {
+  width: max(400px, 40%);
+}
+section#sproduct .preview > img {
+  max-width: 80%;
+  margin: auto;
+}
+section#sproduct .alternative {
+  display: flex;
+  gap: 5px;
+}
+section#sproduct .alternative > img {
+  cursor: pointer;
+  width: calc(100% / 4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+section#sproduct .product-details {
+  width: max(400px, 50%);
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4rem; */
+}
+
+section#sproduct .product-details > div:first-child > * {
+  margin-block: 10px;
+}
+
+section#sproduct select {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+section#sproduct .amount input {
+  width: 61px;
+  padding: 10px;
+  border-radius: 5px;
+}
+section#sproduct .amount button {
+  background-color: #465b52;
+  border-radius: 5px;
+  color: #fff;
+}
+section#sproduct .details h2::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  display: block;
+  background-color: #110f77;
+}
+/* ------------------------- Products Style ------------------------- */
+
+section#products {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+section#products > h1 {
+  /* font-size: clamp(2.4rem, 3vw + 1rem, 5rem); */
+  line-height: 1.2;
+}
+section#products > h1,
+section#products > p {
+  text-align: center;
+}
+section#products .clothes-collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+section#products .clothes-collection > div {
+  padding: 1rem;
+  position: relative;
+  flex-basis: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #cce7d0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+section#products .clothes-collection > div > img {
+  width: 100%;
+  border-radius: 30px;
+}
+section#products .clothes-collection > div:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+}
+
+section#products .img-description > * {
+  margin-block: 0.3rem;
+}
+section#products .img-description .price {
+  font-weight: 600;
+}
+
+section#products .cart {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #cfe2d3;
+  width: 40px;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+section#products .star {
+  display: inline-block;
+  width: 20px;
+}
+/* -----------------shop Pagination----------------- */
+
+section#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  font-weight: 700;
+}
+section#pagination a {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  background-color: #088178;
+  color: #fff;
+}
+
+/* -------------------------News Letters------------------------- */
+
+section#newsletters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  background: #110f77 repeat-x top 20% right 25%;
+  background-image: url("../images/img/banner/b14.png");
+  background-size: contain;
+  color: #fff;
+}
+section#newsletters .sign-up p {
+  color: #fff;
+}
+section#newsletters .offers {
+  color: rgb(226, 226, 13);
+  font-weight: 500;
+}
+section#newsletters form {
+  flex-grow: 1;
+  display: flex;
+}
+
+section#newsletters form > * {
+  padding: 1rem 1rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+}
+section#newsletters form input {
+  border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  margin-left: auto;
+  width: min(100%, 400px);
+}
+section#newsletters form button {
+  border-radius: 0 5px 5px 0px;
+  white-space: nowrap;
+  color: #f8ffff;
+  background-color: rgb(184, 79, 79);
+}
+/* -------------------------Footer ------------------------- */
+
+footer {
+  line-height: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+footer .icons {
+  display: flex;
+}
+footer .install img {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+footer .logo {
+  margin-left: -26px;
+  margin-bottom: 1rem;
+}
+footer .copy {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+/* ---------------------Single Media Query--------------------- */
+@media screen and (max-width: 1072px) {
+  section#sproduct .product-gallery {
+    width: min(100%, 580px);
+    margin: auto;
+  }
+  section#sproduct .product-details > p {
+    margin: 0;
+  }
+  section#sproduct .product-details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  section#sproduct .product-details > * {
+    flex: 1 1 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section#sproduct {
+    padding: 40px;
+  }
+}

@@ -1,0 +1,48 @@
+/* ------------------------- Utility Classes------------------------- */
+.main-header {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+}
+.secondary-header {
+  font-size: clamp(1rem, 2vw + 1rem, 4rem);
+}
+.third-header {
+  font-size: clamp(0.6rem, 2vw + 0.6rem, 3rem);
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+.active {
+  color: var(--clr-font-secondary);
+}
+.hidden {
+  display: none !important;
+}
+.active::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: black;
+  width: 50%;
+  border-radius: 200px;
+}
